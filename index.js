@@ -5,7 +5,7 @@ const cors = require("cors");
 const port = process.env.PORT || 5000;
 
 
-const whitelist = ['https://6300ceec5f3879453b891d96--legendary-babka-b9d515.netlify.app/']
+const whitelist = ['https://6300ceec5f3879453b891d96--legendary-babka-b9d515.netlify.app']
 const corsOptions = {
   credentials: true,
   preflightContinue: true,
