@@ -8,6 +8,8 @@ const port = process.env.PORT || 5000;
 const whitelist = ['https://6300ceec5f3879453b891d96--legendary-babka-b9d515.netlify.app/']
 const corsOptions = {
   credentials: true,
+  preflightContinue: true,
+  optionSuccessStatus: 200,
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
@@ -28,7 +30,7 @@ require('./db/connection.js')
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
-}); 
+});
 
 app.use("/api/v1", require('./router/product.js'))
 
